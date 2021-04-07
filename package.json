@@ -1,8 +1,8 @@
 {
-  "name": "jammming",
+  "name": "sweet-jams",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://sweet-jams.herokuapp.com/"
+  "homepage" : "https://sweet-jams.herokuapp.com/",
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
