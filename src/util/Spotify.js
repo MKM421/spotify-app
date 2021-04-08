@@ -1,5 +1,5 @@
-const clientId = '2d9646f0e24f44a384177d1b67b6d39d'; // Insert client ID here.
-const redirectUri = 'http://localhost:3000'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
+const clientId = 'e1da338de13245388cbfa71ba9182b73'; // Insert client ID here.
+const redirectUri = 'http://localhost:3000/'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
 let accessToken;
 
 const Spotify = {
@@ -7,7 +7,7 @@ const Spotify = {
     if (accessToken) {
       return accessToken;
     }
-
+    // check for access token match
     const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
     const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
     if (accessTokenMatch && expiresInMatch) {
@@ -21,7 +21,7 @@ const Spotify = {
       window.location = accessUrl;
     }
   },
-
+  // handles search
   search(term) {
     const accessToken = Spotify.getAccessToken();
     return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
@@ -41,9 +41,10 @@ const Spotify = {
         album: track.album.name,
         uri: track.uri
       }));
+      console.log(jsonResponse);
     });
   },
-
+  // saves a users playlist to Spotify account
   savePlaylist(name, trackUris) {
     if (!name || !trackUris.length) {
       return;
