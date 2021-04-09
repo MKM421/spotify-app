@@ -1,5 +1,5 @@
 const clientId = 'e1da338de13245388cbfa71ba9182b73'; // Insert client ID here.
-const redirectUri = 'http://localhost:3000/'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
+const redirectUri = 'https://sweet-jams.herokuapp.com/'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
 let accessToken;
 
 const Spotify = {
