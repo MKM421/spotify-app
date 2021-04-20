@@ -1,4 +1,4 @@
-const clientId = 'e1da338de13245388cbfa71ba9182b73'; // Insert client ID here.
+const clientId = process.env.REACT_APP_SPOTIFY_API_KEY; // Insert client ID here.
 const redirectUri = 'https://sweet-jams.herokuapp.com/'; // Have to add this to your accepted Spotify redirect URIs on the Spotify API.
 let accessToken;
 
